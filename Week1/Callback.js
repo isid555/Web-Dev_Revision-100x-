@@ -22,3 +22,5 @@ function sub(a,b){
 }
 
 const ans = Arimetics(180,230,sum,print)
+
+
