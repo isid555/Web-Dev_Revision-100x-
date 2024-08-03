@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learn</title>
+</head>
+<body>
+<input type="number" placeholder="Enter x" id="f">
+<br>
+<input type="number" placeholder="Enter y" id="l">
+<br>
+<button onclick="alertMessage()">Calculate Sum</button>
+<span></span>
+<script>
+    function alertMessage(){
+        alert("Hello World");
+        var x = document.getElementById("f").value;
+        var y = document.getElementById("l").value;
+        var sum = parseInt(x) + parseInt(y);
+    }
+</script>
+</body>
+
+</html>
