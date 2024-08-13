@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter in normal DOM</title>
+</head>
+
+<body>
+<div id="main">
+
+</div>
+
+
+<script>
+
+    let state ={
+        count:0
+    }
+
+    function onPress(){
+        state.count++;
+        buttonComponentreRendering();
+    }
+
+    function buttonComponentreRendering(){
+        document.getElementById("main").innerHTML = " ";
+        let component = buttonComponent(state.count);
+        console.log(component)
+        document.getElementById("main").appendChild(component);
+    }
+    function buttonComponent(count){
+
+        let button = document.createElement("button");
+        button.innerHTML = `Counter ${count}`
+        button.setAttribute("onclick",`onPress()`);
+        return button;
+    }
+    buttonComponentreRendering();
+
+</script>
+<!--React works like this under the hood-->
+</body>
+</html>
