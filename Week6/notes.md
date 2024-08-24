@@ -130,6 +130,64 @@ useCallback returns the memoized function directly.
 useMemo returns the result of calling the function you provide.
 useMemo is a React hook that allows you to memoize the result of a function
 
+What is a Pure Component?
+A Pure Component in React is a component that implements shouldComponentUpdate() with a shallow prop and state comparison. It prevents unnecessary re-renders if the props and state haven't changed, leading to performance optimizations.
+1. Purpose:
+   Pure Component:
+
+Optimizes the entire component by preventing unnecessary re-renders when the props and state haven’t changed.
+Suitable for class components.
+useMemo:
+
+Memoizes the result of an expensive function to avoid recalculating it on every render, unless its dependencies change.
+Specifically used in functional components.
+2. Working Mechanism:
+   Pure Component:
+
+Implements a shallow comparison of props and state using shouldComponentUpdate. If the comparison shows no changes, the component skips rendering.
+useMemo:
+
+Memoizes a specific computation or function result based on its dependency array. The memoized value is only recomputed when one of the dependencies changes.
+
+
+
+The key difference between React.memo and useMemo lies in their purposes and how they are used in React components:
+
+1. React.memo:
+   Purpose: React.memo is a higher-order component (HOC) that optimizes functional components by preventing unnecessary re-renders. It does this by memoizing the rendered output of a component. If the component’s props haven’t changed between renders, React will reuse the last rendered output, avoiding the need to re-render the component.
+
+Usage: You wrap a functional component with React.memo when you want to ensure that it only re-renders when its props change.
+
+```angular2html
+javascript
+Copy code
+const MyComponent = React.memo(function MyComponent(props) {
+// component logic
+return <div>{props.value}</div>;
+});
+```
+When to use: Use React.memo when you want to optimize a functional component that is re-rendering too often without any prop changes.
+
+2. useMemo:
+   Purpose: useMemo is a React hook that memoizes the result of a computation (a value) between renders. It recomputes the value only when its dependencies change. This is useful for optimizing expensive calculations or avoiding unnecessary operations during rendering.
+
+Usage: You use useMemo inside a functional component to memoize the result of a computation based on specific dependencies.
+
+```angular2html
+javascript
+Copy code
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+When to use: Use useMemo when you have an expensive computation or a large object/array creation that shouldn’t be recalculated/recreated on every render unless specific dependencies change.
+
+```
+Summary:
+React.memo is for memoizing entire components to prevent unnecessary re-renders.
+useMemo is for memoizing the result of a function (or computation) to avoid recalculating it on every render unless dependencies change.
+In practice:
+
+React.memo optimizes how often a component re-renders.
+useMemo optimizes how often a value or computation within a component is recalculated.
+
  
 
 
