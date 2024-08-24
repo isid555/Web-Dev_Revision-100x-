@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 
 function App() {
-    const [todos, setTodos] = useState([])
+    // const [todos, setTodos] = useState([])
 
     // useEffect(() => {
     //     fetch("https://sum-server.100xdevs.com/todos")
@@ -20,25 +20,22 @@ function App() {
     //     })
 
 
-    const [input,setinput] = useState(0);
-
-    useEffect(() => {
-        axios.get("https://sum-server.100xdevs.com/todos")
-            .then((res)=>{
-                setTodos(res.data.todos)
-            })
-    }, [input]);
-
-
-    function Todo(prop){
-        return (
-            <li key={prop.id}>
-                <h2>{prop.title}</h2>
-                <p>{prop.description}</p>
-                <p>Status: {prop.completed ? "Completed" : "Not Completed"}</p>
-            </li>
-        )
-    }
+    // const [input,setinput] = useState(0);
+    // useEffect(() => {
+    //     axios.get("https://sum-server.100xdevs.com/todos")
+    //         .then((res)=>{
+    //             setTodos(res.data.todos)
+    //         })
+    // }, [input]);
+    // function Todo(prop){
+    //     return (
+    //         <li key={prop.id}>
+    //             <h2>{prop.title}</h2>
+    //             <p>{prop.description}</p>
+    //             <p>Status: {prop.completed ? "Completed" : "Not Completed"}</p>
+    //         </li>
+    //     )
+    // }
 
 
     function TodoID({id}){
@@ -52,13 +49,9 @@ function App() {
                     const json = await res.json();
                     setTodo (json.todo);
                 })
-        }, []);
+        }, [id]);
 
-        // fetch("https://sum-server.100xdevs.com/todo?id=" + id)
-        //     .then(async function(res) {
-        //         const json = await res.json();
-        //         setTodo (json.todo);
-        //     }) -> infinite loop
+
 
         return(
         <div>
@@ -68,19 +61,38 @@ function App() {
         )
     }
 
-    return (
-        <div>
-            <h1>Hi world</h1>
-            {/*<input type={"number"} onChange={function (e){*/}
-            {/*    setinput(e.target.value);*/}
-            {/*}}/>*/}
-            {/*<ul>*/}
-            {/*    {todos.map(todo => (*/}
-            {/*        <Todo key={todo.id} {...todo} />*/}
-            {/*    ))}*/}
-            {/*</ul>*/}
 
-            <TodoID id={1}/>
+
+    // APP - return |
+    const [buttonValue, setButtonValue] = useState(1);
+
+
+
+    return (
+
+        <div>
+
+
+
+            <h1>Hi world</h1>
+            <button onClick={function (){
+                setButtonValue(1);
+            }}>1</button>
+            <button onClick={function (){
+                setButtonValue(2);
+            }}>2</button>
+            <button onClick={function (){
+                setButtonValue(3);
+            }}>3</button>
+            <button onClick={function (){
+                setButtonValue(4);
+            }}>4</button>
+            <button onClick={function (){
+                setButtonValue(5);
+            }}>5</button>
+
+
+            <TodoID id={buttonValue}/>
 
         </div>
     );
