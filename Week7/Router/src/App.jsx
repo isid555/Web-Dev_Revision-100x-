@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import {CountContext} from "./Context.jsx";
+import {RecoilRoot, useRecoilState, useRecoilValue, useSetRecoilState} from "recoil";
+import countAtom, {evenSeletor} from "./store/atoms.jsx";
 
 // import {BrowserRouter, Route, Routes, useNavigate} from "react-router-dom";
 // import Landing from "./Landing.jsx";
@@ -35,27 +37,31 @@ function App(){
 const[count,setCount] = useState(0);
 return(
     <div>
-        <CountContext.Provider value={count}>
-        <Count setCount={setCount}/>
-        </CountContext.Provider>
+
+      <RecoilRoot>
+          <Count/>
+      </RecoilRoot>
+
     </div>
 
 )
 }
 
 
-function Count({setCount}){
+function Count(){
+    const count = 0;
 return(
     <div>
         <CountRenderer/>
-        <Buttons setCount={setCount}/>
+        <Buttons/>
+        <Even/>
     </div>
 )
 }
 
 
 function CountRenderer(){
-    const count = useContext(CountContext);
+    const count =useRecoilValue(countAtom);
 
     return(
         <div>
@@ -65,8 +71,12 @@ function CountRenderer(){
 }
 
 
-function Buttons({setCount}){
-    const count = useContext(CountContext);
+function Buttons(){
+// const setCount = useSetRecoilState(countAtom)
+const[count,setCount] = useRecoilState(countAtom)
+    // useRecoilState is similar to useState ,but this one can be used in global level;
+    // count -> default value of the atom ,setCOunt takes the function to update the coiunt value
+    console.log("I'm from Button component")
 return(
     <div>
         <button onClick={() => {
@@ -77,8 +87,31 @@ return(
             setCount(count-1)
         }}>Decrement
         </button>
+
+
     </div>
 )
+}
+
+function Even(){
+  //   const count = useRecoilValue(countAtom)
+  //
+  // if(count%2===0){
+  //     return(
+  //         <div>
+  //             It is Even
+  //         </div>
+  //     )
+  // }
+
+    const evenSelector = useRecoilValue(evenSeletor);
+
+    return(
+
+        <div>
+            {evenSelector ? "It is Even" : null}
+        </div>
+    )
 }
 
 export default App;
