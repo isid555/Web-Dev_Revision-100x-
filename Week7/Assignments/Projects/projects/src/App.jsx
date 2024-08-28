@@ -4,6 +4,7 @@ import './App.css';
 import './ProfileComponent.css';
 import { useState } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
+import ParagraphGenerator from "./ParagraphGenerator.jsx";
 
 
 
@@ -14,7 +15,7 @@ function App() {
         // <ProfileComponent profileId={1}/>
         // </RecoilRoot>
         <div>
-          <ButtonColor/>
+<ParagraphGenerator/>
         </div>
     );
 }
@@ -60,6 +61,8 @@ function ButtonColor(){
         </div>
     )
 }
+
+
 
 
 export default App;
