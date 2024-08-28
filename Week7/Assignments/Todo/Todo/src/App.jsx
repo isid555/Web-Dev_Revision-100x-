@@ -87,7 +87,7 @@ function Todo(){
           ))}
         </ul>
 
-
+        Before filter is using selector
         <h1>After filter</h1>
 
         {filteredTodos.map((todo) => {
