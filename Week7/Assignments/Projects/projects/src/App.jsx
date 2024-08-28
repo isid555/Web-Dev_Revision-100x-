@@ -5,6 +5,7 @@ import './ProfileComponent.css';
 import { useState } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import ParagraphGenerator from "./ParagraphGenerator.jsx";
+import GithubGenerator from "./GithubGenerator.jsx";
 
 
 
@@ -15,7 +16,8 @@ function App() {
         // <ProfileComponent profileId={1}/>
         // </RecoilRoot>
         <div>
-<ParagraphGenerator/>
+{/*<ParagraphGenerator/>*/}
+            <GithubGenerator/>
         </div>
     );
 }
