@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import ParagraphGenerator from "./ParagraphGenerator.jsx";
 import GithubGenerator from "./GithubGenerator.jsx";
+import OTPLogin from "./OTPlogin.jsx";
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <div>
 {/*<ParagraphGenerator/>*/}
             <GithubGenerator/>
+            {/*<OTPLogin/>*/}
         </div>
     );
 }
