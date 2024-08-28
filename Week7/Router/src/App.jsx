@@ -39,7 +39,8 @@ return(
     <div>
 
       <RecoilRoot>
-          <Count/>
+          {/*<Count/>*/}
+          <Todo/>
       </RecoilRoot>
 
     </div>
@@ -47,6 +48,20 @@ return(
 )
 }
 
+
+
+function Todo(){
+    const[title,setTitle] = useState("")
+    return(
+        <div>
+            <input type="text" placeholder={"title"}/>
+            <input type="text" placeholder={"description"}/>
+            <button onClick={(e) =>{
+
+            }}>Add Todo</button>
+        </div>
+    )
+}
 
 function Count(){
     const count = 0;
