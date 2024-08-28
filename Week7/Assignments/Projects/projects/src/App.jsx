@@ -14,7 +14,7 @@ function App() {
         // <ProfileComponent profileId={1}/>
         // </RecoilRoot>
         <div>
-
+          <ButtonColor/>
         </div>
     );
 }
@@ -39,7 +39,27 @@ function ProfileComponent({ profileId }) {
     );
 }
 
+function ButtonColor(){
+    const[color,setColor] = useState("white")
 
+    function handleClick(e){
+        console.log("Button is clicked")
+        setColor(e.target.value);
+        // document.body.style.backgroundColor = color;
+    }
+    document.body.style.backgroundColor = color;
+
+    return(
+        <div>
+            <button value={"red"} onClick={handleClick} style={{color: "red"}}>Red</button>
+            <button value={"yellow"} onClick={handleClick} style={{color: "yellow"}}>Yellow</button>
+            <button value={"green"} onClick={handleClick} style={{color: "green"}}>Green</button>
+            <button value={"black"} onClick={handleClick} style={{color: "black"}}>Black</button>
+            <button value={"white"} onClick={handleClick} style={{color: "white"}}>White</button>
+            <button value={"blue"} onClick={handleClick} style={{color: "blue"}}>Blue</button>
+        </div>
+    )
+}
 
 
 export default App;
