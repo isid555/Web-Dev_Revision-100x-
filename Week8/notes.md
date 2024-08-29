@@ -7,4 +7,8 @@ Things to know in  a frontend framework
 
 
 _Flex_ - they all coe in  a staright line
-![img.png](img.png)
+![img.png](img.png
+
+
+# REsponsiveness
+![img_1.png](img_1.png)
