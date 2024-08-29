@@ -1,8 +1,11 @@
+import {Line} from "@/components/Line";
+
 export  function VideoCard(props : any){
     return(
         <div className={"p-3"}>
 
             <img src={"img.png"} className={"rounded-xl"}/>
+            <Line progress={46}/>
             <div className={"grid grid-cols-12"}>
                 <div className={"col-span-1"}>
                     <img className={"rounded-full w-15 h-15 "} src={props.channel_img}/>
