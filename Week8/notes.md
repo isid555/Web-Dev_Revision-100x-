@@ -41,3 +41,5 @@ safeParse returns an object containing two properties:
 success: A boolean that indicates whether the parsing/validation was successful.
 data: The parsed data, only available if success is true.
 error: The error details, only available if success is false.
+
+> The $inc operator in MongoDB is used to increment (or decrement) the value of a field by a specified amount. In your code:
