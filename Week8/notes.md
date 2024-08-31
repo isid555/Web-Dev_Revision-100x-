@@ -27,3 +27,17 @@ Many of us that have been using the Node/Express Framework have been used to ins
 npm install --save body-parser or app.use(express.json()); //Used to parse JSON bodies
 
 Zod is a TypeScript-first schema declaration and validation library that is used for defining and validating the shape of objects, arrays, and other data types. Here's why you might need Zod:
+```angular2html
+signinBody.safeParse(req.body):
+
+signinBody is probably a Zod schema object that defines the expected structure and validation rules for the request body (req.body).
+
+lastName: zod.string().optional(),
+.email()
+```
+
+
+safeParse returns an object containing two properties:
+success: A boolean that indicates whether the parsing/validation was successful.
+data: The parsed data, only available if success is true.
+error: The error details, only available if success is false.
