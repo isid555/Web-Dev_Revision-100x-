@@ -12,9 +12,9 @@ function App() {
         <div className={"grid grid-cols-3 gap-5"}>
             <RevenueCard title={"Amount Processed"} amount={"23,08,789"} orders={13}/>
 
-            <RevenueCard title={"Amount Processed"} amount={"23,08,789"} orders={13}/>
+            <RevenueCard title={"Amount Debited"} amount={"23,08,789"} orders={13}/>
 
-            <RevenueCard title={"Amount Processed"} amount={"23,08,789"} orders={13}/>
+            <RevenueCard title={"Amount Credited"} amount={"23,08,789"} orders={13}/>
 
         </div>
     );
