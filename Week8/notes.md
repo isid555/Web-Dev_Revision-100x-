@@ -43,3 +43,11 @@ data: The parsed data, only available if success is true.
 error: The error details, only available if success is false.
 
 > The $inc operator in MongoDB is used to increment (or decrement) the value of a field by a specified amount. In your code:
+
+### Diff btw axios and fetch
+fetch : fetch does not automatically parse JSON. You need to call .json() on the response object.
+axios  :axios automatically parses JSON responses, so you can directly access the data.
+
+fetch - You must explicitly parse the response by calling the appropriate method (.json(), .text(), etc.), which itself returns a Promise.
+axios - axios automatically parses the response (e.g., JSON) and provides the result directly in the data field.
+![img_6.png](img_6.png)
