@@ -56,3 +56,9 @@ COMMIT;
 4. FULL JOIN
    Returns rows when there is a match in one of the tables. It effectively combines the results of both LEFT JOIN and RIGHT JOIN.
    Use case - A FULL JOIN would combine all records from both users and addresses, showing the relationship where it exists. Given the constraints, this might not be as relevant because every address should be linked to a user, but if there were somehow orphaned records on either side, this query would reveal them.
+
+What is a client - Prisma creates files/codes/clients that reads from schema.prisma and make imports ready for index.ts files to import and use them in backend
+acc to the tables ,prisma generatres clients
+
+![img.png](img.png)
+![img_1.png](img_1.png)
