@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Week11/AWS/sum-server" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Week7/Recoil" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Week7/Recoil/7.4" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Week8/8.3" vcs="Git" />
