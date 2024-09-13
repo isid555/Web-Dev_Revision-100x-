@@ -3,3 +3,7 @@
 Question - Where is the express code? HTTP Server?
 Cloudflare expects you to just write the logic to handle a request.
 Creating an HTTP server on top is handled by cloudflare
+
+```angular2html
+ssh -i Siddharth-Aws-linux.pem ubuntu@13.60.98.144 
+```
