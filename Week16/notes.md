@@ -23,3 +23,15 @@ The key feature of TurboRepo is its ability to manage and optimize the execution
 Caching: TurboRepo caches the outputs of tasks, so if you run a task and then run it again without changing any of the inputs (source files, dependencies, configuration), TurboRepo can skip the actual execution and provide the output from the cache. This can significantly speed up build times, especially in continuous integration environments.
 Parallelization: It can run independent tasks in parallel, making efficient use of your machine's resources. This reduces the overall time needed to complete all tasks in your project.
 Dependency Graph Awareness: TurboRepo understands the dependency graph of your monorepo. This means it knows which packages depend on each other and can ensure tasks are run in the correct order.
+
+![img.png](img.png)
+
+turbo build goes into all packages and apps and runs npm run build inside them (provided they have it)
+Same for dev and lint
+
+![img_1.png](img_1.png)
+
+
+------------------------------------------------- AUTH OFFLINE CLASSES -------------------------------------------------
+
+
