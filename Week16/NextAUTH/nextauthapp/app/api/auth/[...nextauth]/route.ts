@@ -16,9 +16,10 @@
 //     })
 // }
 
+
 import NextAuth from "next-auth"
 import CredentialsProvider from 'next-auth/providers/credentials';
-import GoogleProvider from 'next-auth/providers/google';
+const JWT_SECRET = 'test123'
 const handler = NextAuth({
     providers: [
         CredentialsProvider({
@@ -27,22 +28,15 @@ const handler = NextAuth({
                 username: { label: 'email', type: 'text', placeholder: '' },
                 password: { label: 'password', type: 'password', placeholder: '' },
             },
-
-
             async authorize(credentials: any) {
 
                 return {
                     id: "user1"
                 };
-
             },
-        }),
-        GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID || " ",
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET || " "
         })
     ],
-    secret: "test123",
+    secret: process.env.NEXTAUTH_SECRET
 })
 
-export { handler as GET ,handler as POST}
+export { handler as GET, handler as POST }
